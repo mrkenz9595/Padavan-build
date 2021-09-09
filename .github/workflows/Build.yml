@@ -1,7 +1,25 @@
 name: NEWMINI CI
-on:
-  watch:
-    types: [started]
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      debug_enabled:
+        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        required: false
+        default: 'no'
+  release:
+    types: [published]
+#  push:
+#    tags:
+#    - 'v*'
+  #  branches: 
+  #    - master
+  schedule:
+    - cron: 0 17 * * 4
+#  watch:
+#    types: [started]
+
 jobs:
   build:
     runs-on: ubuntu-18.04
