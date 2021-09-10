@@ -1,15 +1,13 @@
-name: NEWIFI3
-on: 
-  push:
-  pull_request:
+name: Build Padavan Alexey
+
+on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
-      debug_enabled:
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'     
+      ssh:
+        description: 'SSH connection to Actions'
         required: false
-        default: 'no'
-  release:
-    types: [published]
+        default: 'false'
 
 jobs:
   build:
@@ -29,7 +27,7 @@ jobs:
           sudo apt update
           sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot kmod cpio git python3-docutils gettext automake autopoint texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
           cd /opt/padavan-ng/toolchain
-          sh build_toolchain.sh
+          sh dl_toolchain.sh
       - name: Copy File Config
         run: |
           cp /opt/padavan-ng/trunk/configs/templates/newifi/newifi-d2.config /opt/padavan-ng/trunk
