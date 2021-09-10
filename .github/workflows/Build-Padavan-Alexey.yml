@@ -27,7 +27,7 @@ jobs:
           sudo apt update
           sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd fakeroot kmod cpio git python3-docutils gettext automake autopoint texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
           cd /opt/padavan-ng/toolchain
-          sh dl_toolchain.sh
+          sh build_toolchain.sh
       - name: Copy File Config
         run: |
           cp /opt/padavan-ng/trunk/configs/templates/newifi/newifi-d2.config /opt/padavan-ng/trunk
