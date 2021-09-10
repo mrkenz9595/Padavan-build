@@ -30,7 +30,7 @@ jobs:
           sh dl_toolchain.sh
       - name: Compile toolchain
         run: |
-         cd opt/padavan-ng/toolchain
+         cd /opt/padavan-ng/toolchain
          ./clean_sources.sh
          ./build_toolchain.sh
       - name: Copy File Config
