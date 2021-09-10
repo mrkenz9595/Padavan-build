@@ -1,15 +1,13 @@
-name: NEWIFI3
-on: 
-  push:
-  pull_request:
+name: Build Padavan Hanwckf
+
+on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
-      debug_enabled:
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'     
+      ssh:
+        description: 'SSH connection to Actions'
         required: false
-        default: 'no'
-  release:
-    types: [published]
+        default: 'false'
 
 jobs:
   build:
