@@ -35,9 +35,9 @@ jobs:
          ./build_toolchain.sh
       - name: Copy File Config
         run: |
-          cp /opt/padavan-ng/trunk/configs/templates/newifi/newifi-d2.config /opt/padavan-ng/trunk
+          cp /opt/padavan-ng/trunk/configs/templates/xiaomi/mi-4.config /opt/padavan-ng/trunk
           cd /opt/padavan-ng/trunk
-          mv newifi-d2.config .config
+          mv mi-4.config .config
       - name : Build Firmware
         run: |
           cd /opt/padavan-ng/trunk
