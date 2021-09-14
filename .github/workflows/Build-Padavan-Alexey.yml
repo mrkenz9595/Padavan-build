@@ -38,6 +38,8 @@ jobs:
           cp /opt/padavan-ng/trunk/configs/templates/xiaomi/mi-4.config /opt/padavan-ng/trunk
           cd /opt/padavan-ng/trunk
           mv mi-4.config .config
+          sed -i 's/#CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y/CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y/g' .config
+          
       - name : Build Firmware
         run: |
           cd /opt/padavan-ng/trunk
