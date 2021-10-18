@@ -32,7 +32,7 @@ jobs:
       - name: Build Firmware
         run: |
           cd /opt/rt-n56u/trunk
-          fakeroot ./build_firmware_modify CR660X
+          fakeroot ./build_firmware_modify CR660x
       - name : Upload packages
         uses: actions/upload-artifact@master
         if: always()
