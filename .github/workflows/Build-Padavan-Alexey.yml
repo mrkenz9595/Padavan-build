@@ -35,15 +35,14 @@ jobs:
          ./build_toolchain.sh
       - name: Copy File Config
         run: |
-          cp /opt/padavan-ng/trunk/configs/templates/xiaomi/mi-4.config /opt/padavan-ng/trunk
+          cp /opt/padavan-ng/trunk/configs/templates/zbt/zbt-we1626.config /opt/padavan-ng/trunk
           cd /opt/padavan-ng/trunk
-          mv mi-4.config .config
-          sed -i 's/#CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y/CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y/g' .config
+          mv zbt-we1626.config .config
           
       - name : Build Firmware
         run: |
           cd /opt/padavan-ng/trunk
-          sh build_firmware.sh
+          sh build_toolchain.sh
       - name : Upload packages
         uses: actions/upload-artifact@master
         if: always()
