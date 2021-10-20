@@ -40,7 +40,7 @@ jobs:
       - name : Build Firmware
         run: |
           cd /opt/padavan-ng/trunk
-          sh build_toolchain.sh
+          ./build_firmware.sh
       - name : Upload packages
         uses: actions/upload-artifact@master
         if: always()
